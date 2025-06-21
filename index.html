@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin: 10px;
+        }
+        input[type="button"] {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #res {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="'textn1" id="textn1"> +
+    <input type="number" name="textn2" id="textn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id='res'> Resultado</div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('textn1')
+            var tn2 = window.document.getElementById('textn2')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>.`
+        }
+        // Adiciona um evento de teclado para somar ao pressionar Enter
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                somar();
+            }
+        })
+        // Adiciona um evento de teclado para limpar os campos ao pressionar Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                document.getElementById('textn1').value = '';
+                document.getElementById('textn2').value = '';
+                document.getElementById('res').innerHTML = 'Resultado';
+            }
+        }); 
+    </script>
+</body>
+</html>
